@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./js/script.js" type="module"></script>
+    <title>Shooter</title>
+  </head>
+  <body>
+    <div id="controls-field">
+      <button id="controls-quit"><span>x</span></button>
+      <ul id="controls-list">
+        <li>
+          Move top:
+          <div><span>W</span><span>ArrowUp</span></div>
+        </li>
+        <li>
+          Move bottom:
+          <div><span>S</span><span>ArrowDown</span></div>
+        </li>
+        <li>
+          Move left:
+          <div><span>A</span><span>ArrowLeft</span></div>
+        </li>
+        <li>
+          Move top:
+          <div><span>D</span><span>ArrowRight</span></div>
+        </li>
+        <li>
+          Fire
+          <div><span></span><span>Left Mouse Click</span></div>
+        </li>
+      </ul>
+    </div>
+    <div id="game-over">
+      <span>GAME OVER</span>
+      <button id="try-again">TRY AGAIN</button>
+    </div>
+    <div id="start-game">
+      <button id="start">START GAME!</button>
+      <button id="controls">CONTROLS</button>
+    </div>
+    <div id="score-board">
+      <div><span>Score: </span> <span id="score">0</span></div>
+      <div><span>Top score: </span> <span id="top-score">0</span></div>
+    </div>
+    <div id="health-bar">
+      <span>Health</span>
+      <span id="health">100</span>%
+    </div>
+    <div id="ammo-bar">
+      <span id="ammo-auto"></span>
+      <span>💥</span>
+      <span id="ammo">50</span>
+    </div>
+    <canvas id="canvas"></canvas>
+    <div id="bg">
+      <div id="bg-lighting"></div>
+    </div>
+  </body>
+</html>

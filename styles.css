@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+#controller-field {
+  width: max(10vmax, 100px);
+  height: max(10vmax, 100px);
+  position: absolute;
+  left: max(3.2vmin, 32px);
+  bottom: max(3.2vmin, 32px);
+  display: flex;
+  flex-wrap: wrap;
+  transform: rotate(45deg);
+  gap: 4%;
+  /* border-radius: 50%;
+  overflow: hidden; */
+}
+
+.controller-btn {
+  width: 48%;
+  height: 48%;
+  border: 1px solid #d4e4c7;
+  color: #d4e4c7;
+}
+
+.controller-btn:active,
+.controller-btn:focus {
+  border: 1px solid #da5555;
+}
+
+#bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url(./img/bg-map.jpg);
+  background-size: cover;
+  z-index: -2;
+}
+
+#bg-lighting {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#canvas {
+  width: 100vw;
+  height: 100vh;
+}
+
+#game-over {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  max-width: 400px;
+  border-radius: max(2vmin, 2px);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #8d3535;
+  font-size: max(4vmin, 40px);
+  padding: max(2vmin, 20px) max(1.2vmin, 12px);
+}
+
+#game-over > span {
+  display: block;
+  color: #c00909;
+}
+
+#try-again {
+  display: block;
+  margin-top: max(1vmin, 10px);
+  padding: max(1.2vmin, 12px) max(0.8vmin, 8px);
+  border-radius: max(0.8vmin, 8px);
+  border: 2px solid #8d3535;
+  color: #8d3535;
+  background-color: #c48282;
+  font-weight: bold;
+}
+
+#try-again:hover {
+  cursor: pointer;
+  border-color: #c00909;
+  color: #c00909;
+  background-color: #da5555;
+}
+
+#start-game {
+  width: 60%;
+  max-width: 400px;
+}
+
+#start-game,
+#controls-field {
+  display: flex;
+  gap: max(0.5vmin, 5px);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: max(2vmin, 2px);
+  background-color: rgba(11, 75, 15, 0.5);
+  color: #8d3535;
+  font-size: max(4vmin, 40px);
+  padding: max(2vmin, 20px) max(1.2vmin, 12px);
+  border: 1px solid #d4e4c7;
+}
+
+#start,
+#controls,
+#controls-quit {
+  display: block;
+  padding: max(1.2vmin, 12px) max(0.8vmin, 8px);
+  border-radius: max(0.8vmin, 8px);
+  width: 50%;
+  border: 2px solid #22720c;
+  color: #22720c;
+  background-color: #d4e4c7;
+  font-weight: bold;
+}
+
+#controls-quit {
+  position: absolute;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  width: max(2vmin, 20px);
+  height: max(2vmin, 20px);
+  top: max(0.8vmin, 8px);
+  right: max(0.8vmin, 8px);
+  padding: 0;
+}
+
+#controls-list {
+  display: flex;
+  flex-direction: column;
+  font-size: max(2.8vmin, 28px);
+  font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
+  color: #d4e4c7;
+}
+
+#controls-list > li {
+  list-style: none;
+}
+
+#controls-list > li > div {
+  width: 50%;
+}
+
+#controls-list > li,
+#controls-list > li > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+#controls-field {
+  display: none;
+  padding: max(2vmin, 20px) max(4vmin, 40px);
+  width: 100%;
+  max-width: min(70vmin, 700px);
+  border: 1px solid #d4e4c7;
+}
+
+#start:hover,
+#controls:hover,
+#controls-quit:hover {
+  cursor: pointer;
+  border-color: #d4e4c7;
+  color: #d4e4c7;
+  background-color: #22720c;
+}
+
+#score-board,
+#health-bar,
+#ammo-bar {
+  display: none;
+  position: absolute;
+  border-radius: max(0.5vmin, 5px);
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: max(2vmin, 20px);
+  padding: max(0.5vmin, 5px) max(1.3vmin, 13px);
+  font-weight: bold;
+  user-select: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#score-board {
+  top: max(1.2vmin, 12px);
+  left: max(1.2vmin, 12px);
+  color: rgb(161, 51, 51);
+}
+
+#score-board > div {
+  display: flex;
+  justify-content: space-between;
+  gap: max(0.5vmin, 5px);
+}
+
+#health-bar {
+  top: max(1.2vmin, 12px);
+  right: max(1.2vmin, 12px);
+  color: rgb(100, 161, 51);
+}
+
+#ammo-bar {
+  bottom: max(1.2vmin, 12px);
+  right: max(1.2vmin, 12px);
+  color: #918f3b;
+}
+
+#ammo {
+  display: inline-block;
+  width: 25px;
+  text-align: right;
+}
